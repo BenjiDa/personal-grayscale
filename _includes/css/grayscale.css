@@ -57,6 +57,7 @@ a:focus {
     color: #11505d;
 }
 
+
 .light {
     font-weight: 400;
 }
@@ -67,6 +68,12 @@ a:focus {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: {{ site.color.primary-dark }};
+}
+
+.navbar-custom p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .navbar-custom .navbar-brand {
@@ -89,18 +96,24 @@ a:focus {
 }
 
 .navbar-custom a {
-    color: #fff;
+    color: #000000
 }
+
 
 .navbar-custom .nav li.active {
     outline: none;
     background-color: rgba(255,255,255,.3);
 }
 
+
 .navbar-custom .nav li a {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li {
+    /*background-color: red;*/
 }
 
 .navbar-custom .nav li a:hover,
@@ -109,6 +122,54 @@ a:focus {
     outline: 0;
     background-color: rgba(255,255,255,.3);
 }
+
+
+.nav li .dropdown a{
+    position:relative;
+    display:block;
+    padding:15px 15px;
+
+}
+
+.nav li a{
+    position:relative;
+    display:block;
+    padding:15px 15px;
+
+}
+
+
+.nav li .dropdown-content a {
+    /*padding: 10px 10px;*/
+}
+
+.navbar-custom .nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255,255,255,.3);
+    min-width: 160px;
+    border-spacing: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+
+
+/*.navbar-custom .nav .dropdown-content a:hover {
+    background-color: blue;
+
+}*/
+
+
+.dropdown:hover .dropdown-content {
+    display:block;
+
+}
+
+
+
+
 
 @media(min-width:767px) {
     .navbar {
@@ -126,6 +187,10 @@ a:focus {
         background-color: {{ site.color.primary-dark }};
     }
 
+    .top-nav-collapse a {
+        color: #fff
+    }
+
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
@@ -138,7 +203,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(/img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(/img/intro-bg-fade.svg) no-repeat bottom center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -148,7 +213,8 @@ a:focus {
 
 .intro .intro-body {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
+    /*background-color: rgba(255,0,0,0.5);*/
 }
 
 .intro .intro-body .brand-heading {
@@ -156,8 +222,10 @@ a:focus {
 }
 
 .intro .intro-body .intro-text {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
 }
+
 
 @media(min-width:767px) {
     .intro {
@@ -248,15 +316,151 @@ a:focus {
     }
 }
 
-.content-section {
-    padding-top: 100px;
+
+
+/*.projects-section{
+    padding:10rem 0
+}*/
+
+/*.projects-section {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding:2rem
 }
 
-.download-section {
+@media (min-width:992px){
+    .projects-section .featured-text{
+        padding:0 0 0 2rem;
+        border-left:.5rem solid #64a19d
+    }
+}
+
+.projects-section .project-text{
+    padding:3rem;
+    font-size:90%
+}
+
+@media (min-width:992px){
+    .projects-section .project-text{
+        padding:5rem
+    }
+    .projects-section .project-text hr{
+        border-color:#64a19d;
+        border-width:.25rem;
+        width:30%
+    }
+}*/
+
+
+/*Adding portfolio to projects section*/
+/*.text-faded {
+    color: rgba(white, .7);
+}*/
+
+/*.no-padding {
+    padding: 0;
+}*/
+
+/*a {
+    @include transition-all;
+    color: $theme-primary;
+}*/
+    
+/*a:hover,
+focus {
+    color: darken($theme-primary, 10%);
+}*/
+
+
+.portfolio-box {
+    position: relative;
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
+
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.portfolio-box-caption {
+    color: white;
+    opacity: 0;
+    display: block;
+    background: rgba( $theme-primary, .9 );
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    /*@include transition-all;*/
+}
+.portfolio-box-caption-content {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.project-category,
+.project-name {
+    /*@include sans-serif-font;*/
+    padding: 0 15px;
+}
+.project-category {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 24px;
+}
+.project-name {
+    font-size: 18px;
+}
+
+.portfolio-box-caption:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.7);
+
+}
+
+@media (min-width: 768px) {
+    .portfolio-box-caption .portfolio-box-caption-content .project-category {
+        font-size: 24px;
+    }
+    .project-name {
+        font-size: 22px;
+    }
+}
+
+/*// Bootstrap Overrides*/
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-primary {
+    color: $theme-primary;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+/*...*/
+
+
+/*Trying to fix order of image display in projects section*/
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/*...*/
+
+.tools-section{
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(/img/downloads-bg.jpg) no-repeat center center scroll;
+    /*background: url(/img/cr-view.jpg) no-repeat center center scroll;*/
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -264,6 +468,43 @@ a:focus {
     -o-background-size: cover;
 }
 
+
+.content-section {
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.download-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(/img/downloads-bg.jpg) no-repeat center center scroll;
+    background-size: cover;
+    background-color: {{ site.color.primary-dark }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.contact-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(/img/rock.png) no-repeat center center scroll;
+    background-color: {{ site.color.primary-dark }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.contact-section h2{
+    display: inline-block;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 25px;
+}
+    
 #map {
     width: 100%;
     height: 200px;
@@ -279,9 +520,17 @@ a:focus {
         padding: 100px 0;
     }
 
+    .project-section {
+        padding: 100px 0;
+    }
+
+    .tools-section {
+        padding: 200px 0;
+    }
+
     #map {
         height: 400px;
-        margin-top: 250px;
+        margin-top: 100px;
     }
 }
 
