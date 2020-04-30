@@ -491,6 +491,7 @@ focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
+    margin: 200px auto;
     background: url(/img/rock.png) no-repeat center center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
