@@ -1,5 +1,5 @@
     <!-- Tools Section -->
-    <section id="tools" class="container content-section tools-section text-center">
+    <div id="tools" class="container content-section text-center" style="padding-bottom: 0px;" >
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Tools</h2>
@@ -8,10 +8,76 @@
             
             </div>
         </div>
+    </div>
 
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <img src="img/cr-view-bw2.jpg" class="img-responsive" alt="">
-            </div>
-        </div>
+    <section class="container tools-section tools-section text-center">
+        
+
+        <!-- <div class="container-fluid"> -->
+
+            <!-- <div class="img-wrapper"> -->
+                <!-- <img src="img/cr-view-bw2.jpg" class="img-responsive" alt=""> -->
+
+                <ul class="list-inline banner-social-buttons img-overlay">
+                    {% for network in site.tools %}
+                     <li >
+                        <a href="{{ network.url }}" class="btn btn-default btn-lg"><i class="fa fa-{{ network.symbol }} fa-fw"></i> <span class="network-name">{{ network.title }}</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <!-- <div class="img-overlay">
+                    <button class="btn btn-md btn-success">Button</button>
+                </div> -->
+
+            <!-- </div> -->
+        <!-- </div> -->
     </section>
+
+    <style type="text/css">
+
+        .btn-default {
+            border: 1px solid {{ site.color.links }};
+            color: {{ site.color.links }};
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .img-wrapper {
+          /*position: relative;*/
+         }
+      
+        .img-responsive {
+          /*width: 100%;*/
+          /*height: auto;*/
+        }
+
+       /* .img-overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+        }*/
+
+        .img-overlay:before {
+          /*content: ' ';*/
+          /*display: block;*/
+          /* adjust 'height' to position overlay content vertically */
+          /*height: 50%;*/
+        }
+        /*.btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          background-color: #555;
+          color: white;
+          font-size: 16px;
+          padding: 12px 24px;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+      }*/
+    </style>

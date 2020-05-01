@@ -1,3 +1,43 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+
+
+
+
 # Site settings
 title: Grayscale
 email: benmelosh@gmail.com
@@ -16,17 +56,33 @@ footer: BenjiDa
 social:
   - title: twitter
     url: https://twitter.com/rolltheturbines
+    symbol: twitter
   - title: google scholar
     url: https://scholar.google.com/citations?user=8ijDU1MAAAAJ&hl=en
+    symbol: google scholar
   - title: github
     url: https://github.com/BenjiDa
+    symbol: github
   - title: linkedin
     url: https://www.linkedin.com/in/ben-melosh-7043a859/
-  - title: Publications
-    url: 
-  - title: Curriculum Vitae
-    url: 
+    symbol: linkedin
+  - title: publications
+    url: publications
+    symbol: graduation-cap
+  - title: curriculum vitae
+    url:
+    symbol: university
 
+tools:
+  - title: XRD analyser
+    url: https://github.com/BenjiDa/xrd_analyzer
+    symbol: university
+  - title: Fractal finder
+    url: https://github.com/BenjiDa/fractal_finder
+    symbol: graduation-cap
+  - title: Flowstress calculator
+    url: https://benjida.github.io/flowstress.html
+    symbol: university
 
 # Build settings
 markdown: kramdown
