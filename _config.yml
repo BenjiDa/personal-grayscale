@@ -76,14 +76,24 @@ social:
 tools:
   - title: XRD analyser
     url: https://github.com/BenjiDa/xrd_analyzer
-    symbol: university
+    symbol: calculator
   - title: Fractal finder
     url: https://github.com/BenjiDa/fractal_finder
-    symbol: graduation-cap
+    symbol: calculator
   - title: Flowstress calculator
     url: https://benjida.github.io/flowstress.html
-    symbol: university
+    symbol: calculator
+
+
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+
+
+
+
+
+
+

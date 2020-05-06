@@ -1,26 +1,85 @@
     <!-- Map Section -->
 
-    <div id="map-loc" class="container content-section text-center" style="padding-bottom: 0px;" >
-    	<div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Maps</h2>
-                <p>Geologic mapping in the 21st century</p>
-  
-            
-            </div>
+   <!--  <script type="text/javascript" src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css"/>
+      -->
+
+    <!-- <div id="map"></div> -->
+
+<style>
+   
+    
+    #comparison-container{
+        position:relative;
+        width:100%;
+        top:0;
+        bottom:0;
+        height: 400px;
+    }
+    .map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+</style>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+<link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css"
+    type="text/css"
+/>
+
+<div id="map-loc" class="container content-section text-center" style="padding-bottom: 0px;" >
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Maps</h2>
+            <p>From field sheets to web maps</p>
         </div>
     </div>
+ </div>
 
-    <div id="map"></div>
 
+<div id="comparison-container">
+        <div id="before" class="map"></div>
+        <div id="after" class="map"></div>
+</div>
+
+
+
+<!-- <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYm1lbG9zaCIsImEiOiJjamw0N2lnenYwNTd1M2tubHNneG0ydHFpIn0.MxTNGVxi4sJytIpjajrHCg';
+
+    // var mapContainer = document.getElementById('map');
+    // var beforeDiv = document.getElementById('before');
+    // var afterDiv = document.getElementById('after');
+    // mapContainer.appendChild(beforeDiv);
+    // mapContainer.appendChild(afterDiv);
+
+    var beforeMap = new mapboxgl.Map({
+        container: 'before',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [0, 0],
+        zoom: 0
+    });
+
+    var afterMap = new mapboxgl.Map({
+        container: 'after',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [0, 0],
+        zoom: 0
+    });
+
+    // A selector or reference to HTML element
+    var container = '#comparison-container';
+
+    var map = new mapboxgl.Compare(beforeMap, afterMap, container, {
+        // Set this to enable comparing two maps by mouse movement:
+        // orientation: 'vertical',
+        // mousemove: true
+    });
 
     
-    
-    
-
- <!--    <div id="map" >
-        
-
-    
-
-	</div> -->
+</script> -->
