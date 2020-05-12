@@ -1,47 +1,54 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-// jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>California Geology</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
-});
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        if ($anchor.attr('href')=='#page-top')
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
-        else
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top +100
-            }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
+    #comparison-container{
+        position:absolute;
+        width:100%;
+        top:0;
+        bottom:0;
+        /*height: 100%;*/
+    }
 
+    .map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
 
+</style>
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+<link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css"
+    type="text/css"
+/>
 
-// remove the focused state after click,
-// otherwise bootstrap will still highlight the link
-$("a").mouseup(function(){
-    $(this).blur();
-});
+<!-- <div id="map"></div> -->
 
+<div id="comparison-container">
+        <div id="before" class="map"></div>
+        <div id="after" class="map"></div>
+</div>
+<script>
 
 // Mapbox map geologic map and active fault map slider.
 //
@@ -53,7 +60,7 @@ var beforeMap = new mapboxgl.Map({
     style: 'mapbox://styles/bmelosh/ck9vyezsh04we1ipbsfr346bb',
     // 'mapbox://styles/bmelosh/cjlcs7b3r290q2sphp5n4g11v',
     center: [-121, 37.8],
-    zoom: 8
+    zoom: 6
 });
 
 // Load fault data 
@@ -93,7 +100,7 @@ beforeMap.on('style.load', function() {
       },
       'source-layer': 'qfaults-306owm',
       'paint': {
-        'line-width': 7,
+        'line-width': 5,
         'line-color': "hsla(0, 0%, 0%, 0)"
         }
 
@@ -125,7 +132,7 @@ var afterMap = new mapboxgl.Map({
     container: 'after',
     style: 'mapbox://styles/bmelosh/ck9vyezsh04we1ipbsfr346bb',
     center: [-121, 37.8],
-    zoom: 8
+    zoom: 6
 });
 // Load geologic data
 afterMap.on('style.load', function() {
@@ -269,6 +276,7 @@ afterMap.on('style.load', function() {
         'line-color': "hsl(0, 0%, 0%)",
         'line-width': 0.1
       }
+      
   });
     // Faults
     afterMap.addLayer({
@@ -279,10 +287,7 @@ afterMap.on('style.load', function() {
           url: 'mapbox://bmelosh.6zri3uya'
       },
       'source-layer': 'cafaults',
-      'paint':{
-        'line-color': "hsl(0, 0%, 0%)",
-        'line-width': 0.7
-      }
+      'line-color': "hsl(0, 0%, 0%)"
   });
 
     // Add popup and populate it for geology polygons
@@ -305,8 +310,8 @@ afterMap.on('style.load', function() {
 });
 
 // Disable zoom scroll
-beforeMap.scrollZoom.disable();
-afterMap.scrollZoom.disable();
+// beforeMap.scrollZoom.disable();
+// afterMap.scrollZoom.disable();
 
 
 // A selector or reference to HTML element
@@ -318,15 +323,8 @@ var map  = new mapboxgl.Compare(beforeMap, afterMap, container, {
 });
 
 // Set the initial position of the slider
-map.setSlider(600);
+// map.setSlider(600);
+</script>
 
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>

@@ -203,7 +203,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(/img/intro-bg-fade.svg) no-repeat bottom center scroll;
+    background: linear-gradient(#00000000 85%, #000000 100%), url(/img/intro-bg-fade.svg) no-repeat bottom center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -462,7 +462,7 @@ focus {
     padding: 50px 0;
     color: #fff;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url(/img/cr-view-bw2.jpg) no-repeat center center scroll;
+    background: linear-gradient(#000000 0%, #00000000 5%, #00000000 95%, #000000 100%), url(/img/cr-view-bw2.jpg) no-repeat center center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -510,8 +510,9 @@ focus {
     padding: 50px 0;
     color: #fff;
     margin: 200px auto;
-    background: url(/img/rock.png) no-repeat center center scroll;
+    background: linear-gradient(#000000 0%, #00000000 5%, #00000000 95%, #000000 100%), url(/img/rock.png) no-repeat center center scroll;
     background-color: {{ site.color.primary-dark }};
+    background: 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -523,6 +524,7 @@ focus {
     background-color: rgba(0,0,0,0.6);
     border-radius: 25px;
 }
+
  
 
 /*#comparison-container {
@@ -540,6 +542,12 @@ focus {
     width: 100%;
 }*/
 
+.mapboxgl-popup {
+    max-width: 400px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font: 12px/20px;
+    color: black;
+}
 
 @media(min-width:767px) {
     .content-section {
