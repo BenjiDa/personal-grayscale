@@ -96,7 +96,7 @@ a:focus {
 }
 
 .navbar-custom a {
-    color: #000000
+    color: #000000;
 }
 
 
@@ -120,7 +120,8 @@ a:focus {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a.active {
     outline: 0;
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255,255,255,0.3);
+    /*{{ site.color.links }};*/
 }
 
 
@@ -146,7 +147,7 @@ a:focus {
 .navbar-custom .nav .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255,255,255,0.8);
     min-width: 160px;
     border-spacing: 0px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -188,7 +189,9 @@ a:focus {
     }
 
     .top-nav-collapse a {
-        color: #fff
+        color: #fff;
+        /*{{ site.color.links }};*/
+        /**/
     }
 
     .navbar-custom.top-nav-collapse {

@@ -39,7 +39,7 @@ plugins:
 
 
 # Site settings
-title: Ben Melosh
+title: Geotools
 email: benmelosh@gmail.com
 url: https://example.github.io
 description: A portfolio of recent projects, maps and geoscience tools.
@@ -81,7 +81,7 @@ tools:
     url: https://github.com/BenjiDa/fractal_finder
     symbol: calculator
   - title: Flowstress calculator
-    url: https://benjida.github.io/flowstress.html
+    url: /flowstress
     symbol: calculator
 
 
@@ -89,6 +89,7 @@ tools:
 # Build settings
 markdown: kramdown
 permalink: pretty
+
 
 
 
