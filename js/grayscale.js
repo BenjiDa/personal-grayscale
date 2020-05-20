@@ -281,7 +281,7 @@ afterMap.on('style.load', function() {
       'source-layer': 'cafaults',
       'paint':{
         'line-color': "hsl(0, 0%, 0%)",
-        'line-width': 0.7
+        'line-width': 0.5
       }
   });
 
