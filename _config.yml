@@ -55,7 +55,7 @@ social:
     url: publications
     symbol: graduation-cap
   - title: curriculum vitae
-    url:
+    url: /pdf/CV.pdf
     symbol: university
 
 tools:
